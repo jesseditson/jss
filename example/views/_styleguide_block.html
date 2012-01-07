@@ -1,0 +1,24 @@
+<div class="styleguide-example">
+
+  <h3>{{section}} <em>{{filename}}</em></h3>
+  <div class="styleguide-description">
+    <p>{{description}}</p>
+	<!-- TODO: don't show this if there are no modifiers.-->
+      <ul class="styleguide-modifier">
+		  {{#modifiers}}
+          <li><strong>{{name}}</strong> - {{description}}</li>
+		  {{/modifiers}}
+      </ul>
+    <!-- end TODO -->
+  </div>
+  <div class="styleguide-element">
+    {{{example_html}}}
+  </div>
+  {{#generate_modifiers}} $modifier_class, getClassName
+    <div class="styleguide-element styleguide-modifier">
+      <span class="styleguide-modifier-name">{{name}}</span>
+	  {{{example_html}}}
+  	</div>
+  {{/generate_modifiers}}
+
+</div>

@@ -1,0 +1,13 @@
+{
+	"name" : "jss-example",
+	"version" : "0.0.1",
+	"description" : "An example jss app.",
+	"engines" : {
+		"node" : ""
+	},
+	"dependencies" : {
+		"express" : "",
+		"underscore" : "",
+		"mustache" : ""
+	}
+}
