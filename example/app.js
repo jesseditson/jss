@@ -86,13 +86,16 @@ var getContent = function(file,object,callback){
 			callback(content);
 		}
 	if(typeof callback != "function") throw new Error("please provide a valid callback to getContent");
-	if(fileCache[file]) return fileCache[file];
-	fs.readFile(templateRoot + "/" + file,function(err,body){
-		if(err) throw err;
-		if(typeof object != "function"){
-			done(Mustache.to_html(body.toString(),object));
-		} else {
-			done(body.toString());
-		}
-	});
+	if(fileCache[file]){
+		callback(fileCache[file]);
+	} else {
+		fs.readFile(templateRoot + "/" + file,function(err,body){
+			if(err) throw err;
+			if(typeof object != "function"){
+				done(Mustache.to_html(body.toString(),object));
+			} else {
+				done(body.toString());
+			}
+		});
+	}
 }
