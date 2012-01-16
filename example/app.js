@@ -2,8 +2,10 @@ var express = require('express'),
 	Mustache = require('mustache'),
 	fs = require('fs'),
 	_ = require('underscore'),
-	Jss = require('../lib/jss.js'),
-	trim = require('../lib/helpers/trim.js'),
+	Jss = require('jss-styles'),
+	trim = function trim(str) {
+        return str.toString().replace(/^\s+|\s+$/g,"");
+	},
 	app = express.createServer(),
 	fileCache = {},
 	styleguide = new Jss.Parser("./public/css"); // TODO: possible race condition, styleguide won't technically be usable until it's done parsing.
