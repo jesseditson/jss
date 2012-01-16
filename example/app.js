@@ -41,7 +41,7 @@ app.get('/styleguide',function(req,res){
 										out = "";
 									for(var m in modifiers){
 										var modifier = modifiers[m],
-											example = example_html.replace(args[0],modifier[args[1]]());
+											example = example_html.split(args[0]).join(modifier[args[1]]());
 										out += Mustache.to_html(body,{
 											"example_html" : example,
 											"name" : modifier.name
@@ -51,6 +51,7 @@ app.get('/styleguide',function(req,res){
 								}
 							}
 						};
+						console.log(modifiers);
 					return Mustache.to_html(_styleguide_block,obj);
 				}
 			}
