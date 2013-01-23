@@ -1,7 +1,7 @@
 var express = require('express'),
     Mustache = require('mustache'),
     fs = require('fs'),
-    Jss = require('../index'),
+    Jss = require('jss-styles'),
     app = express(),
     fileCache = {}
 
