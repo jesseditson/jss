@@ -2,7 +2,7 @@
 	"name" : "jss-styles",
 	"description" : "A Stylesguide parser (and example generator) for creating living styleguides, based on kss - http://github.com/kneath/kss.",
 	"tags" : ["css", "kss", "style", "guide"],
-	"version" : "0.1.2",
+	"version" : "0.1.3",
 	"author" : "Jesse Ditson <jesse.ditson@gmail.com>",
 	"repository" : {
 		"type" : "git",
